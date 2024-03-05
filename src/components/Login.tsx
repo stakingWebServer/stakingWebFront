@@ -4,9 +4,11 @@ import login from "@/api/login";
 import { useState } from "react";
 import Button from "./ui/Button";
 import InputBox from "./ui/InputBox";
-import { redirect } from "next/navigation";
+import { useRouter } from 'next/navigation'
 
 export default function Login() {
+    const router = useRouter(); // useRouter 훅 사용
+
     const [loginData, setLoginData] = useState({
         loginId: '',
         password: ''
@@ -22,13 +24,27 @@ export default function Login() {
         }));
     }
 
+    //빈 데이터 있는지 확인
+    const inputCheck = () => {
+        if (loginData.loginId === '' || loginData.password === '') {
+            alert('빈칸을 입력해 주세요');
+            return false
+        }
+        return true
+    }
+
     //로그인 요청
     const handleLogin = async () => {
+        if (!inputCheck()) return
+
         const result = await login(loginData);
-        console.log(result)
-        // if (result.status === 200) {
-        //     redirect('/dashboard')
-        // }
+
+        if (result.status === 'FAIL') {
+            alert(result.errorMessage);
+        } else if (result.status === 'SUCCESS') {
+            alert('로그인에 성공했습니다.');
+            router.push('/dashboard');
+        }
     }
 
 

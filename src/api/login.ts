@@ -17,5 +17,5 @@ export default async function login(loginData: LoginData) {
         body: JSON.stringify(loginData)
     })
 
-    return response
+    return response.json()
 }
