@@ -1,5 +1,10 @@
+import Nav from "@/components/Nav";
+
+//대시보드 컴포넌트
 export default function Dashboard() {
     return (
-        <div>대시보드 페이지 입니다.</div>
+        <div>
+            <Nav selectNav={'대시보드'} />
+        </div>
     )
 }
