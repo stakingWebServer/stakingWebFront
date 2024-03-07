@@ -623,6 +623,12 @@ video {
 .w-48 {
   width: 12rem;
 }
+.w-\[600px\] {
+  width: 600px;
+}
+.w-\[740px\] {
+  width: 740px;
+}
 .max-w-\[1200px\] {
   max-width: 1200px;
 }

@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import DashboardCards from "@/components/DashboardCards";
+import PageGraph from "@/components/PageGraph";
 
 
 
@@ -9,6 +10,7 @@ export default function Dashboard() {
         <div>
             <Nav selectNav={'대시보드'} />
             <DashboardCards />
+            <PageGraph />
         </div>
     )
 }
