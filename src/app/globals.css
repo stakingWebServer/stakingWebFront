@@ -9,9 +9,10 @@ body {
     
 }
 
-input {
+input, textarea {
   color: #222;
 }
+
 
 @layer utilities {
   .text-balance {
