@@ -1,16 +1,5 @@
 pipeline {
     agent any
-    environment {
-        CURRENT_LOCATION = '/var/lib/jenkins/workspace/stakingweb/stakingWebFront';
-    }
-    stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main',
-                    credentialsId: 'github_personal_access_token',
-                    url: 'https://github.com/stakingWebServer/stakingWebFront.git'
-            }
-        }
         stage('build') {
             steps {
                     script{
@@ -27,7 +16,6 @@ pipeline {
                             echo "not exist port"
                         }
             sh 'sudo git clone https://github.com/stakingWebServer/stakingWebFront.git'
-            sh 'sudo mv ${CURRENT_LOCATION}/** /app/project'
             sh 'sudo npm install'
             sh 'sudo npm run build'
             sh 'sudo nohup npm run start &'
