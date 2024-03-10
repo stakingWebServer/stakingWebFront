@@ -1,9 +1,5 @@
 pipeline {
     agent any
-
-    environment {
-        CURRENT_LOCATION = '/var/lib/jenkins/workspace/stakingweb';
-    }
     stages {
         stage('build') {
             steps {
