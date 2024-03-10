@@ -7,7 +7,6 @@ pipeline {
         stage('build') {
             steps {
             dir(env.CURRENT_LOCATION) {
-            sudo rm -rf web
             }
                     script{
                         def pid
