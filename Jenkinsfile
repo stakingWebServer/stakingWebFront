@@ -16,12 +16,6 @@ pipeline {
                         else{
                             echo "not exist port"
                         }
-                    sudo git clone https://github.com/stakingWebServer/stakingWebFront.git
-                    sourceDir = "/var/lib/jenkins/workspace/web/stakingWebFront"
-                    targetDir = "/app/project"
-
-                    sh "mv ${sourceDir}/* ${targetDir}/"
-
             sh 'sudo npm install'
             sh 'sudo npm run build'
             sh 'sudo nohup npm run start &'
