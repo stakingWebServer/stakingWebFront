@@ -1,9 +1,11 @@
 pipeline {
     agent any
+    environment {
+        CURRENT_LOCATION = '/var/lib/jenkins/workspace/staking/web';
+    }
         stages {
         stage('build') {
             steps {
-                dir('/app/project') {
                     script{
                         def pid
                         def response
@@ -17,13 +19,10 @@ pipeline {
                         else{
                             echo "not exist port"
                         }
-            sh 'sudo git clone https://github.com/stakingWebServer/stakingWebFront.git'
             sh 'sudo npm install'
             sh 'sudo npm run build'
             sh 'sudo nohup npm run start &'
             }
-                }
-
         }
         }
         }
