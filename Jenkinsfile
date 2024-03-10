@@ -1,12 +1,9 @@
 pipeline {
     agent any
-    environment {
-        CURRENT_LOCATION = '/var/lib/jenkins/workspace/web/stakingWebFront';
-    }
         stages {
         stage('build') {
             steps {
-                dir('CURRENT_LOCATION') {
+                dir('/app/project') {
                     script{
                         def pid
                         def response
