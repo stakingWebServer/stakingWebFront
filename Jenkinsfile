@@ -5,7 +5,7 @@ pipeline {
         CURRENT_LOCATION = '/var/lib/jenkins/workspace/stakingweb';
     }
     stages {
-        stage('database build') {
+        stage('build') {
             steps {
                     script{
                         def pid
@@ -19,10 +19,10 @@ pipeline {
                         else{
                             echo "not exist port"
                         }
-            sh 'sudo git clone https://github.com/stakingWebServer/stakingWebFront.git'
-            sh 'sudo npm install'
-            sh 'sudo npm run build'
-            sh 'sudo npm run start'
+            sh "sudo git clone https://github.com/stakingWebServer/stakingWebFront.git"
+            sh "sudo npm install"
+            sh "sudo npm run build"
+            sh "sudo npm run start"
             }
         }
 }
