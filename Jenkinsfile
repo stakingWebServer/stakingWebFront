@@ -16,15 +16,8 @@ pipeline {
                         else{
                             echo "not exist port"
                         }
+                        sh '/app/project/script/deploy.sh'
             }
-        stage('Deploy') {
-            steps {
-                // deploy.sh 스크립트 실행
-                script {
-                    sh '/app/project/script/deploy.sh'
-                }
-            }
-        }
         }
         }
         }
