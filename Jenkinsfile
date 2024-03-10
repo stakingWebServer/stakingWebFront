@@ -1,11 +1,15 @@
 pipeline {
     agent any
     environment {
-        CURRENT_LOCATION = '/var/lib/jenkins/workspace/staking/web';
+        CURRENT_LOCATION = '/var/lib/jenkins/workspace/web';
     }
         stages {
         stage('build') {
             steps {
+            dir(env.CURRENT_LOCATION) {
+            sudo rm -rf web
+            sudo rm -rf web@tmp
+            }
                     script{
                         def pid
                         def response
