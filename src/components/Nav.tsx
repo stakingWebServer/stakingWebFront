@@ -21,7 +21,7 @@ type Props = {
 
 export default function Nav({ selectNav }: Props) {
     return (
-        <nav className="text-right">
+        <nav className="text-right py-4">
             <ul className="flex justify-end my-5 mx-3">
                 {navArr.map(item => (
                     <li key={item.href}

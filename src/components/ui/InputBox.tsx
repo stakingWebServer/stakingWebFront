@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from "react"
 
 type Props = {
     id: string;
@@ -6,7 +5,6 @@ type Props = {
     onChange: React.ChangeEventHandler<HTMLInputElement>
     type: string;
 }
-
 
 export default function InputBox({ text, id, onChange, type }: Props) {
     return (
