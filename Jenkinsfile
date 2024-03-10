@@ -21,3 +21,6 @@ pipeline {
             sh 'sudo nohup npm run start &'
             }
         }
+        }
+        }
+        }
