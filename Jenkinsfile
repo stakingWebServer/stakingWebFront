@@ -3,7 +3,6 @@ pipeline {
      stages {
         stage("Build") {
             steps {
-                sh "sudo chmod -R 777 /var/lib/jenkins/workspace/web"
                 sh "sudo npm install"
                 sh "sudo npm run build"
             }
