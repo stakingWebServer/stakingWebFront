@@ -7,7 +7,7 @@ type LoginData = {
     password: string;
 }
 
-
+//d
 export default async function login(loginData: LoginData) {
     const response = await fetch(`${API_URL}/auth`, {
         method: 'POST',
