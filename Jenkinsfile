@@ -19,7 +19,7 @@ pipeline {
                         else{
                             echo "not exist port"
                         }
-            echo '현재 경로!!! : ${CURRENT_LOCATION}
+            echo '현재 경로!!! : ${CURRENT_LOCATION}'
             sh 'sudo npm install'
             sh 'sudo npm run build'
             sh 'sudo nohup npm run start &'
