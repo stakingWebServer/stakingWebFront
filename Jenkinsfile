@@ -16,10 +16,15 @@ pipeline {
                         else{
                             echo "not exist port"
                         }
-            sh 'sudo npm install'
-            sh 'sudo npm run build'
-            sh 'sudo nohup npm run start &'
             }
+        stage('Deploy') {
+            steps {
+                // deploy.sh 스크립트 실행
+                script {
+                    sh '/app/project/script/deploy.sh'
+                }
+            }
+        }
         }
         }
         }
