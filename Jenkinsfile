@@ -8,7 +8,6 @@ pipeline {
             steps {
             dir(env.CURRENT_LOCATION) {
             sudo rm -rf web
-            sudo rm -rf web@tmp
             }
                     script{
                         def pid
