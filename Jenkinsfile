@@ -11,13 +11,7 @@ pipeline {
                         def pid
                         def response
                         def status = true
-                        try {
                         pid = sh(script: "sudo lsof -t -i :3001 -s TCP:LISTEN",returnStdout: true).trim()
-                        }
-                        catch(Exception e){
-                            echo "오류 내용 : ${e.message}"
-                            pid = null
-                        }
                        if(pid != "" && pid != null){
                         echo '현재 PID : ${pid}'
                         sh "sudo kill -9 ${pid}"
