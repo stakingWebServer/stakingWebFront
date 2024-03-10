@@ -23,10 +23,11 @@ pipeline {
                         else{
                             echo "not exist port"
                         }
-            sh "sudo git clone https://github.com/stakingWebServer/stakingWebFront.git"
-            sh "sudo npm install"
-            sh "sudo npm run build"
-            sh "sudo nohup npm run start &"
+            sh ' cd /app/project/
+            sh 'sudo git clone https://github.com/stakingWebServer/stakingWebFront.git'
+            sh 'sudo npm install'
+            sh 'sudo npm run build'
+            sh 'sudo nohup npm run start &'
             }
         }
 }
