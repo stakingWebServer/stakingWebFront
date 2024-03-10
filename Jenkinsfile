@@ -23,7 +23,7 @@ pipeline {
             sh "sudo git clone https://github.com/stakingWebServer/stakingWebFront.git"
             sh "sudo npm install"
             sh "sudo npm run build"
-            sh "sudo npm run start"
+            sh "sudo nohup npm run start &"
             }
         }
 }
