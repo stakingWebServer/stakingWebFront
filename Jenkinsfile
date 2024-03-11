@@ -3,7 +3,8 @@ pipeline {
      stages {
         stage("Build") {
             steps {
-                sh "sudo git clone https://github.com/stakingWebServer/stakingWebFront.git"
+                sh "sudo git pull"
+                //sh "sudo git clone https://github.com/stakingWebServer/stakingWebFront.git"
                 sh "sudo npm install"
                 sh "sudo npm run build"
             }
