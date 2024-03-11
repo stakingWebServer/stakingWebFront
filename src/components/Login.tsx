@@ -51,7 +51,7 @@ export default function Login() {
     return (
         <div className="w-full text-center mt-20">
             <div className="w-80 mx-auto border border-solid border-gray-200 rounded-lg p-8">
-                <h2 className="text-lg">로그인</h2>
+                <h2 className="text-lg">로그인123</h2>
                 <div className="mt-3 ">
                     <InputBox type="text" text={'아이디'} id='loginId' onChange={loginDataChange} />
                     <InputBox type="password" text={'비밀번호'} id='password' onChange={loginDataChange} />
