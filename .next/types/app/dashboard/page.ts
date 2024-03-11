@@ -1,4 +1,4 @@
-// File: /Users/kimyoungjae/Desktop/myproject/stakingweb/stakingWebFront/src/app/dashboard/page.tsx
+// File: /Users/yjkim-mtn/Desktop/myInfo/stakingfront/src/app/dashboard/page.tsx
 import * as entry from '../../../../src/app/dashboard/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
