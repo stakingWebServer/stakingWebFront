@@ -2,18 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-body {
-    background-color: #222;
-    color: #fff;
-    
-}
-
-input, textarea {
-  color: #222;
-}
-
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;

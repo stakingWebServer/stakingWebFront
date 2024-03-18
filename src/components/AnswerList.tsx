@@ -70,7 +70,7 @@ const testData = [
 export default function AnswerList() {
     return (
         <div >
-            <p className="bg-gray-600 p-6">Question List</p>
+            <p className="bg-gray-200 p-6">Question List</p>
             <ul>
                 {testData.map(item => (
                     <li key={item.questionId} className="cursor-pointer flex p-6 justify-between border-b border-solid border-gray-300">

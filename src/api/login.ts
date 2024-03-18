@@ -19,7 +19,3 @@ export default async function login(loginData: LoginData) {
     return response.json()
 }
 
-// export const setCookie = (cookie: any) => {
-//     cookies().set('token', cookie)
-
-// }
