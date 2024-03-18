@@ -2,7 +2,15 @@
   "node": {
     "2ce27fe475708392698f6bbed0dfa88625beb219": {
       "workers": {
-        "app/dashboard/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjaeeun%2FDocuments%2FGitHub%2FstakingWebFront%2Fsrc%2Fapi%2Fdashboard.ts%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!"
+        "app/dashboard/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjaeeun%2FDocuments%2FGitHub%2FstakingWebFront%2Fsrc%2Fapi%2Fdashboard.ts%22%2C%5B%22default%22%2C%22getPageView%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/dashboard/page": "action-browser"
+      }
+    },
+    "7f7fcff26f60fe2010d1a20a28825ae0bd6c2d4a": {
+      "workers": {
+        "app/dashboard/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjaeeun%2FDocuments%2FGitHub%2FstakingWebFront%2Fsrc%2Fapi%2Fdashboard.ts%22%2C%5B%22default%22%2C%22getPageView%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
         "app/dashboard/page": "action-browser"
@@ -10,5 +18,5 @@
     }
   },
   "edge": {},
-  "encryptionKey": "/fRnRtj68D6SoaxaVNN5C5H5x9UJ3xvT2px3JIS3Hkg="
+  "encryptionKey": "nbsmBNujB6Ft0z3ijsmRsqK3iqfYm9jCfxZ0x314f5M="
 }
