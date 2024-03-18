@@ -1,50 +1,15 @@
 {
   "pages": {
-    "/_not-found": [
-      "static/chunks/webpack-b9a2b2ac7195590b.js",
-      "static/chunks/fd9d1056-0ff44707c238218a.js",
-      "static/chunks/69-fc559876c00bf682.js",
-      "static/chunks/main-app-c2120ffd20ae8b9e.js",
-      "static/chunks/app/_not-found-a8e9268a020f12e4.js"
+    "/dashboard/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/page.js"
     ],
     "/layout": [
-      "static/chunks/webpack-b9a2b2ac7195590b.js",
-      "static/chunks/fd9d1056-0ff44707c238218a.js",
-      "static/chunks/69-fc559876c00bf682.js",
-      "static/chunks/main-app-c2120ffd20ae8b9e.js",
-      "static/css/a02fdb9a2bc8f150.css",
-      "static/chunks/app/layout-a5e201318d21e92b.js"
-    ],
-    "/dashboard/page": [
-      "static/chunks/webpack-b9a2b2ac7195590b.js",
-      "static/chunks/fd9d1056-0ff44707c238218a.js",
-      "static/chunks/69-fc559876c00bf682.js",
-      "static/chunks/main-app-c2120ffd20ae8b9e.js",
-      "static/chunks/250-8ecc1631c40c300c.js",
-      "static/chunks/app/dashboard/page-6a6bf0341a34bb6c.js"
-    ],
-    "/pushSend/page": [
-      "static/chunks/webpack-b9a2b2ac7195590b.js",
-      "static/chunks/fd9d1056-0ff44707c238218a.js",
-      "static/chunks/69-fc559876c00bf682.js",
-      "static/chunks/main-app-c2120ffd20ae8b9e.js",
-      "static/chunks/250-8ecc1631c40c300c.js",
-      "static/chunks/app/pushSend/page-438ede2700976b6d.js"
-    ],
-    "/page": [
-      "static/chunks/webpack-b9a2b2ac7195590b.js",
-      "static/chunks/fd9d1056-0ff44707c238218a.js",
-      "static/chunks/69-fc559876c00bf682.js",
-      "static/chunks/main-app-c2120ffd20ae8b9e.js",
-      "static/chunks/app/page-764af194168b531c.js"
-    ],
-    "/inquiryAnswer/page": [
-      "static/chunks/webpack-b9a2b2ac7195590b.js",
-      "static/chunks/fd9d1056-0ff44707c238218a.js",
-      "static/chunks/69-fc559876c00bf682.js",
-      "static/chunks/main-app-c2120ffd20ae8b9e.js",
-      "static/chunks/250-8ecc1631c40c300c.js",
-      "static/chunks/app/inquiryAnswer/page-c023cb951820cea7.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
     ]
   }
 }

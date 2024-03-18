@@ -1,3 +1,3 @@
 
-export const API_URL = 'https://api.s2it.kro.kr/api/v1/admin';
-//pipeline test4
+export const API_URL = process.env.NEXT_PUBLIC_API_URL || '';
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
