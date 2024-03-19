@@ -8,7 +8,6 @@ const token = `Bearer ${theme?.value}` || "";
 
 //각 카드 데이터 가져오기
 export default async function getDashboardCardData(card: string) {
-  console.log(theme?.value || "");
   const response = await fetch(`${API_URL}/today/${card}`, {
     method: "GET",
     mode: "cors",

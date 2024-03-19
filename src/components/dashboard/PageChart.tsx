@@ -1,12 +1,22 @@
 "use client";
 import { getPageView } from "@/api/dashboard";
 import { useEffect, useState } from "react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
+import Chart from "chart.js";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+} from "recharts";
 
 type ChartData = {
   viewName: string;
   pageView: number;
 };
+
 export default function PageChart() {
   const [data, setData] = useState<ChartData[]>([]);
 
@@ -22,16 +32,18 @@ export default function PageChart() {
   console.log(data);
 
   return (
-    <BarChart
-      width={500}
-      height={400}
-      data={data}
-      margin={{ top: 40, right: 30, left: 20, bottom: 5 }}
-    >
-      <XAxis dataKey="viewName" />
-      <YAxis />
-      <Tooltip />
-      <Bar dataKey="pageView" fill="#8884d8" />
-    </BarChart>
+    <div>
+      <BarChart
+        width={500}
+        height={400}
+        data={data}
+        margin={{ top: 40, right: 30, left: 20, bottom: 5 }}
+      >
+        <XAxis dataKey="viewName" />
+        <YAxis />
+        <Tooltip />
+        <Bar dataKey="pageView" fill="#8884d8" />
+      </BarChart>
+    </div>
   );
 }
