@@ -22,13 +22,11 @@ export default function DashboardCard({ card }: Props) {
         getCardData();
     }, [])
 
-    if (!data) return <div></div>
-
     return (
         <div>
             <p className="mb-5">당일 가입 {card.name} 사용자 수</p>
             <div className="flex border-white items-center justify-center mx-10 border border-solid border-black rounded-lg w-48 h-48">
-                {data.todayNum} 명
+                {data?.todayNum} 명
             </div>
         </div>
 

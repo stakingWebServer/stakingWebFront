@@ -11,6 +11,10 @@ export default function PushSendBox() {
         content: ''
     });
 
+    const handlePush = () => {
+
+    }
+
     return (
         <div className="w-[500px] mx-auto bg-gray-200 p-5 rounded-lg text-center">
             <InputBox text="제목" id="title" type='text' onChange={() => { }} />

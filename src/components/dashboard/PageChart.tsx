@@ -19,27 +19,29 @@ const test = [
 ]
 
 export default function PageChart() {
-    const [data, setData] = useState(null);
+    // const [data, setData] = useState(null);
 
-    const getChartData = async () => {
-        const data = await getPageView();
-        setData(data);
-    }
+    // const getChartData = async () => {
+    //     const data = await getPageView();
+    //     setData(data);
+    // }
 
-    useEffect(() => {
-        getChartData();
-    }, [])
+    // useEffect(() => {
+    //     getChartData();
+    // }, [])
+
+    // console.log(data)
 
     return (
         <div className="bg-gray-200 rounded-lg py-5 my-5">
-            <BarChart width={500} height={400} data={test}
+            {/* <BarChart width={500} height={400} data={test}
                 margin={{ top: 40, right: 30, left: 20, bottom: 5 }}
             >
                 <XAxis dataKey="viewName" />
                 <YAxis />
                 <Tooltip />
                 <Bar dataKey="pageView" fill="#8884d8" />
-            </BarChart>
+            </BarChart> */}
         </div>
     )
 
