@@ -1,4 +1,4 @@
-import AnswerList from "@/components/AnswerList";
+import AnswerList from "@/components/inquiryAnswer/AnswerList";
 import Nav from "@/components/Nav";
 
 export default function InquiryAnswer() {
