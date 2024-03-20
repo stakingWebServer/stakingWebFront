@@ -23,11 +23,10 @@ export default function PageChart() {
         setData(result.result);
     };
 
+
     useEffect(() => {
         getChartData();
     }, []);
-
-    console.log(data);
 
     return (
         <div>

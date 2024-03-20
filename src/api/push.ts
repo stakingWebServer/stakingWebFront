@@ -13,7 +13,6 @@ type PushSendData = {
     alarmDetailKind: string;
 }
 
-
 //단체 push 전송
 export default async function pushSend(pushSendData: PushSendData) {
     const response = await fetch(`${API_URL}/pushs`, {

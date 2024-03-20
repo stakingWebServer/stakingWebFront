@@ -3,7 +3,8 @@
 import { API_URL } from "@/utile/env"
 import { cookies } from 'next/headers'
 
-const theme = cookies().get('token')
+const theme = cookies().get('token');
+const cookie = `Bearer ${theme?.value}` || ""
 
 //각 카드 데이터 가져오기
 export default async function getDashboardCardData(card: string) {
@@ -13,7 +14,7 @@ export default async function getDashboardCardData(card: string) {
         cache: 'no-cache',
         headers: {
             "Content-Type": "application/json",
-            "Authorization": theme?.value || ""
+            "Authorization": cookie
         },
     })
 
@@ -29,7 +30,7 @@ export async function getPageView() {
         cache: 'no-cache',
         headers: {
             "Content-Type": "application/json",
-            "Authorization": theme?.value || ""
+            "Authorization": cookie
         },
     })
 

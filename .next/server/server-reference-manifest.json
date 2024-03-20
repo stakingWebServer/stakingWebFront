@@ -16,15 +16,15 @@
         "app/dashboard/page": "action-browser"
       }
     },
-    "12e3e6e07dd30d2aef32d82cb63c163629f33e1c": {
+    "3d64164d10de8cfad3f0b3b35a9066617c8a3927": {
       "workers": {
-        "app/pushSend/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjaeeun%2FDocuments%2FGitHub%2FstakingWebFront%2Fsrc%2Fapi%2Fpush.ts%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!"
+        "app/inquiryAnswer/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjaeeun%2FDocuments%2FGitHub%2FstakingWebFront%2Fsrc%2Fapi%2FinquiryAnswer.ts%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
-        "app/pushSend/page": "action-browser"
+        "app/inquiryAnswer/page": "action-browser"
       }
     }
   },
   "edge": {},
-  "encryptionKey": "YHgbecLhC4xJWYuiBlQYVLmEzfWLN6sQL04aAcYVlGg="
+  "encryptionKey": "5iRW0xrqYGyjeLw6H15/5n3D7+ykoW5Cou0lPGuJYq4="
 }

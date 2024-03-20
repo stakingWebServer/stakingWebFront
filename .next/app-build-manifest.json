@@ -16,10 +16,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/pushSend/page": [
+    "/inquiryAnswer/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/pushSend/page.js"
+      "static/chunks/app/inquiryAnswer/page.js"
     ]
   }
 }
