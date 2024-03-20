@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from "react";
+import pushSend from "@/api/push";
+import React, { useState } from "react";
 import Button from "./ui/Button";
 import InputBox from "./ui/InputBox";
 import TextareaBox from "./ui/TextareaBox";
@@ -8,18 +9,42 @@ import TextareaBox from "./ui/TextareaBox";
 export default function PushSendBox() {
     const [sendData, setSendData] = useState({
         title: '',
-        content: ''
+        content: '',
+        advertisementPushYn: "N",
+        alarmDetailKind: "01"
     });
 
-    const handlePush = () => {
+    //데이터 변경
+    const pushDataChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
 
+        setSendData(prevLoginData => ({
+            ...prevLoginData,
+            [name]: value
+        }));
+    }
+
+    //push 전송
+    const handlePush = async () => {
+        const result = await pushSend(sendData);
+
+        if (result.status === "SUCCESS") {
+            alert('전송에 성공했습니다.');
+            setSendData({
+                ...sendData,
+                title: '',
+                content: '',
+            })
+        } else {
+            alert('전송에 실패했습니다.')
+        }
     }
 
     return (
         <div className="w-[500px] mx-auto bg-gray-200 p-5 rounded-lg text-center">
-            <InputBox text="제목" id="title" type='text' onChange={() => { }} />
-            <TextareaBox text="내용" id="content" onChange={() => { }} />
-            <Button text="전송" size={400} onClick={() => { }} />
+            <InputBox text="제목" id="title" type='text' onChange={pushDataChange} value={sendData.title} />
+            <TextareaBox text="내용" id="content" onChange={pushDataChange} value={sendData.content} />
+            <Button text="전송" size={400} onClick={handlePush} />
         </div>
     )
 }
