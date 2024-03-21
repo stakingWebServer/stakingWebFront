@@ -6,10 +6,11 @@ import { ModalBackCss } from "../ui/Modal";
 import TextareaBox from "../ui/TextareaBox";
 
 type Props = {
-    id: string
+    id: string;
+    setModal: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
-export default function AnswerModal({ id }: Props) {
+export default function AnswerModal({ id, setModal }: Props) {
     const [answerData, setAnswerData] = useState<string>('');
 
     const handleAnswer = async () => {
@@ -20,7 +21,8 @@ export default function AnswerModal({ id }: Props) {
         });
 
         if (result.status !== 'FAIL') {
-            alert('답변을 등록했습니다.')
+            alert('답변을 등록했습니다.');
+            setModal(null)
         } else {
             alert(result.errorMessage)
         }
@@ -31,7 +33,7 @@ export default function AnswerModal({ id }: Props) {
             <div className="bg-white w-[450px] h-[470px] p-3 m-auto mt-[12%]">
                 <div className="flex justify-between pb-3">
                     <span>답변등록</span>
-                    <span>X</span>
+                    <span className="cursor-point" onClick={() => setModal(null)}>X</span>
                 </div>
                 <TextareaBox text="" id="content" value={answerData} onChange={(e: { target: { value: SetStateAction<string>; }; }) => setAnswerData(e.target.value)} />
                 <Button text="답변등록" size={200} onClick={handleAnswer} />

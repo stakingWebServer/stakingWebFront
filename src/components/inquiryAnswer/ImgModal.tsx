@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { ModalBackCss } from "../ui/Modal"
-import { ImgModalData } from "./AnswerList"
+import { ImgModalData } from "./Answer"
 
 type ImgData = {
     fileUrl: string;

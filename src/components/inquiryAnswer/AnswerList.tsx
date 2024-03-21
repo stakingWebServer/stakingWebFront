@@ -1,18 +1,13 @@
 'use client'
 
 import getQuestionsList from "@/api/inquiryAnswer";
-import Image from "next/image";
-import { MouseEvent, useEffect, useState } from "react";
-import Button from "../ui/Button";
-import AnswerModal from "./AnswerModal";
-import ImgModal from "./ImgModal";
+import { useEffect, useState } from "react";
+import Answer from "./Answer";
 
-type File = {
+export type File = {
     fileName: string;
     fileUrl: string;
 }
-
-export type ImgModalData = File | null;
 
 export type QuestionData = {
     questionId: string;
@@ -23,19 +18,18 @@ export type QuestionData = {
     replyContent: string;
 }
 
-const textareaCss = 'w-full border border-slide p-3'
 
 export default function AnswerList() {
     const [data, setData] = useState<QuestionData[]>([]);
     const [contentIndex, setContentIndex] = useState<number | null>(null) //몇 번째 content 클릭했는지
-    const [imgModalData, setimgModalData] = useState<ImgModalData>(null) //모달창에 띄울 img 데이터
-    const [answerModalId, setAnswerModalId] = useState<string | null>(null);
 
+    //questionList 받아오기
     const handleGetQuestionList = async () => {
         const result = await getQuestionsList();
         setData(result.result);
     }
 
+    //질문 클릭했을 때
     const questionClick = (i: number) => {
         if (i === contentIndex) setContentIndex(null);
         else setContentIndex(i)
@@ -58,31 +52,10 @@ export default function AnswerList() {
                             <p>{item.title}</p>
                             <p className={item.replyYn === 'true' ? "text-blue-600" : "text-red-600"}>{item.replyYn === 'N' ? '미답변' : '답변완료'}</p>
                         </div>
-                        {contentIndex === i &&
-                            <div className="bg-white m-1 p-6 w-full">
-                                <textarea className={`${textareaCss} h-[150px]`} value={item.content} readOnly />
-                                <div className="flex justify-end">
-                                    {item.fileInfos.map((item) =>
-                                        <Image
-                                            className="m-1"
-                                            key={item.fileUrl}
-                                            width={60}
-                                            height={60}
-                                            src={item.fileUrl}
-                                            alt={item.fileName}
-                                            onClick={() => setimgModalData(item)}
-                                        />
-                                    )}
-                                </div>
-                                {item.replyYn === 'N' ?
-                                    <Button text={"답변등록"} size={200} onClick={() => setAnswerModalId(item.questionId)} />
-                                    : <textarea className={`${textareaCss} h-[100px]`} value={item.replyContent} readOnly />}
-                            </div>}
+                        {contentIndex === i && <Answer data={item} />}
                     </li>
                 ))}
             </ul>
-            {imgModalData && <ImgModal imgData={imgModalData} setModal={setimgModalData} />}
-            {answerModalId && <AnswerModal id={answerModalId} />}
         </div>
     )
 }
