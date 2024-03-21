@@ -4,7 +4,7 @@ import getQuestionsList from "@/api/inquiryAnswer";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Button from "../ui/Button";
-import AnswerModal from "./answerModal";
+import AnswerModal from "./AnswerModal";
 import ImgModal from "./ImgModal";
 
 type File = {
@@ -12,30 +12,30 @@ type File = {
     fileUrl: string;
 }
 
+export type ImgModalData = File | null;
+
 export type QuestionData = {
     questionId: string;
     title: string;
-    contentIndex: string;
+    content: string;
     fileInfos: File[];
     replyYn: string;
+    replyContent: string;
 }
+
+const textareaCss = 'w-full border border-slide p-3'
 
 export default function AnswerList() {
     const [data, setData] = useState<QuestionData[]>([]);
-    const [contentIndex, setContentIndex] = useState<number | null>(2) //몇 번째 content 클릭했는지
-    const [imgModalData, setimgModalData] = useState<File | null>(null) //모달창에 띄울 img 데이터
-    // const [modal, setModal] = useState(false);
-    // const [modalData, setModalData] = useState<QuestionData | null>(null)
+    const [contentIndex, setContentIndex] = useState<number | null>(null) //몇 번째 content 클릭했는지
+    const [imgModalData, setimgModalData] = useState<ImgModalData>(null) //모달창에 띄울 img 데이터
+    const [answerModalId, setAnswerModalId] = useState<string | null>(null);
 
     const handleGetQuestionList = async () => {
         const result = await getQuestionsList();
         setData(result.result);
     }
 
-    // const handleAnswerModal = (questionData: QuestionData) => {
-    //     setModal(!modal);
-    //     setModalData(questionData)
-    // }
 
     useEffect(() => {
         handleGetQuestionList();
@@ -58,7 +58,7 @@ export default function AnswerList() {
                         </div>
                         {contentIndex === i &&
                             <div className="bg-white m-1 p-6 w-full">
-                                <textarea className="w-full h-[150px]" value={item.contentIndex} readOnly />
+                                <textarea className={`${textareaCss} h-[150px]`} value={item.content} readOnly />
                                 <div className="flex justify-end">
                                     {item.fileInfos.map((item) =>
                                         <Image
@@ -72,14 +72,15 @@ export default function AnswerList() {
                                         />
                                     )}
                                 </div>
-                                {item.replyYn === 'N' && <Button text={"답변등록"} size={200} onClick={() => { }} />}
-
+                                {item.replyYn === 'N' ?
+                                    <Button text={"답변등록"} size={200} onClick={() => setAnswerModalId(item.questionId)} />
+                                    : <textarea className={`${textareaCss} h-[100px]`} value={item.replyContent} readOnly />}
                             </div>}
                     </li>
                 ))}
             </ul>
             {imgModalData && <ImgModal imgData={imgModalData} setModal={setimgModalData} />}
-            {/* {modal && <AnswerModal data={modalData} />} */}
+            {answerModalId && <AnswerModal id={answerModalId} />}
         </div>
     )
 }

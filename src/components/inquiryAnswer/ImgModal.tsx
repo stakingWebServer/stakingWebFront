@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { ModalBackCss } from "../ui/Modal"
-import { ImgModal } from "./AnswerList"
+import { ImgModalData } from "./AnswerList"
 
 type ImgData = {
     fileUrl: string;
@@ -9,7 +9,7 @@ type ImgData = {
 
 type Props = {
     imgData: ImgData;
-    setModal: React.Dispatch<React.SetStateAction<ImgModal>>;
+    setModal: React.Dispatch<React.SetStateAction<ImgModalData>>;
 }
 
 export default function ImgModal({ imgData, setModal }: Props) {

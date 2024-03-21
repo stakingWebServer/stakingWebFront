@@ -1,5 +1,4 @@
 'use server'
-
 import { API_URL } from '@/utile/env';
 import { cookies } from 'next/headers'
 
@@ -17,6 +16,26 @@ export default async function getQuestionsList() {
             "Content-Type": "application/json",
             "Authorization": cookie
         },
+    })
+
+    return response.json()
+}
+type AnswerData = {
+    questionId: string;
+    content: string;
+}
+
+//문의목록 조회
+export async function answerReply(answerData: AnswerData) {
+    const response = await fetch(`${API_URL}/reply`, {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": cookie
+        },
+        body: JSON.stringify(answerData)
     })
 
     return response.json()
