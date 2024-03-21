@@ -2,7 +2,7 @@
 
 import getQuestionsList from "@/api/inquiryAnswer";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import Button from "../ui/Button";
 import AnswerModal from "./AnswerModal";
 import ImgModal from "./ImgModal";
@@ -36,12 +36,14 @@ export default function AnswerList() {
         setData(result.result);
     }
 
+    const questionClick = (i: number) => {
+        if (i === contentIndex) setContentIndex(null);
+        else setContentIndex(i)
+    }
 
     useEffect(() => {
         handleGetQuestionList();
     }, [])
-
-    console.log(data)
 
     return (
         <div >
@@ -49,7 +51,7 @@ export default function AnswerList() {
             <ul>
                 {data.map((item, i) => (
                     <li
-                        onClick={() => setContentIndex(i)}
+                        onClick={() => questionClick(i)}
                         key={item.questionId}
                         className={`${i % 2 === 0 ? 'bg-blue-300' : 'bg-blue-100'} cursor-pointer flex flex-wrap my-1`}>
                         <div className="w-full flex justify-between p-6">
