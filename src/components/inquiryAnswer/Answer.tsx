@@ -39,14 +39,17 @@ export default function Answer({ data }: { data: QuestionData }) {
                     )}
                 </div>
                 {data.replyYn === 'N' ?
-                    <Button
-                        text={"답변등록"}
-                        size={200}
-                        onClick={(e: { stopPropagation: () => void; }) => {
-                            e.stopPropagation();
-                            setAnswerModalId(data.questionId)
-                        }}
-                    />
+                    <div className="text-right">
+                        <Button
+                            text={"답변등록"}
+                            size={200}
+                            onClick={(e: { stopPropagation: () => void; }) => {
+                                e.stopPropagation();
+                                setAnswerModalId(data.questionId)
+                            }}
+                        />
+                    </div>
+
                     : <textarea
                         onClick={e => e.stopPropagation()}
                         className={`${textareaCss} h-[100px]`}

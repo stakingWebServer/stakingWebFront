@@ -30,13 +30,16 @@ export default function AnswerModal({ id, setModal }: Props) {
 
     return (
         <div className={ModalBackCss}>
-            <div className="bg-white w-[450px] h-[470px] p-3 m-auto mt-[12%]">
-                <div className="flex justify-between pb-3">
+            <div className="bg-white w-[450px] h-[480px] p-3 m-auto mt-[12%]">
+                <div className="flex justify-between p-3">
                     <span>답변등록</span>
                     <span className="cursor-point" onClick={() => setModal(null)}>X</span>
                 </div>
                 <TextareaBox text="" id="content" value={answerData} onChange={(e: { target: { value: SetStateAction<string>; }; }) => setAnswerData(e.target.value)} />
-                <Button text="답변등록" size={200} onClick={handleAnswer} />
+                <div className="text-center">
+                    <Button text="답변등록" size={400} onClick={handleAnswer} />
+                </div>
+
             </div>
         </div>
     )
