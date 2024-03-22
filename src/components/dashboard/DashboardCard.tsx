@@ -24,7 +24,7 @@ export default function DashboardCard({ card }: Props) {
     }, [])
 
     return (
-        <div className="bg-blue-200 p-10 m-3 rounded-lg">
+        <div className="bg-blue-100 p-10 m-3 rounded-lg">
             <p className="mb-10">당일 가입 {card.name} 사용자 수</p>
             <div className="flex border-white items-center justify-center border border-solid border-black rounded-lg w-60 h-48">
                 {data?.todayNum} 명

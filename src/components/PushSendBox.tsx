@@ -41,7 +41,7 @@ export default function PushSendBox() {
     }
 
     return (
-        <div className="w-[500px] mx-auto bg-gray-200 p-5 rounded-lg text-center">
+        <div className="w-[500px] mx-auto p-5 rounded-lg text-center bg-blue-100">
             <InputBox text="제목" id="title" type='text' onChange={pushDataChange} value={sendData.title} />
             <TextareaBox text="내용" id="content" onChange={pushDataChange} value={sendData.content} />
             <Button text="전송" size={400} onClick={handlePush} />
