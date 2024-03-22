@@ -1,5 +1,6 @@
 {
+  "/pushSend/page": "app/pushSend/page.js",
+  "/inquiryAnswer/page": "app/inquiryAnswer/page.js",
   "/page": "app/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
-  "/inquiryAnswer/page": "app/inquiryAnswer/page.js"
+  "/dashboard/page": "app/dashboard/page.js"
 }
