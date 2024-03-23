@@ -15,10 +15,9 @@ export default function Answer({ data }: { data: QuestionData }) {
     const [answerModalId, setAnswerModalId] = useState<string | null>(null);
 
     return (
-        <>
+        <div className="w-full" onClick={e => e.stopPropagation()}>
             <div className="bg-white m-1 p-6 w-full">
                 <textarea
-                    onClick={e => e.stopPropagation()}
                     className={`${textareaCss} h-[150px]`}
                     value={data.content}
                     readOnly />
@@ -31,10 +30,7 @@ export default function Answer({ data }: { data: QuestionData }) {
                             height={60}
                             src={item.fileUrl}
                             alt={item.fileName}
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                setimgModalData(item);
-                            }}
+                            onClick={() => setimgModalData(item)}
                         />
                     )}
                 </div>
@@ -43,10 +39,7 @@ export default function Answer({ data }: { data: QuestionData }) {
                         <Button
                             text={"답변등록"}
                             size={200}
-                            onClick={(e: { stopPropagation: () => void; }) => {
-                                e.stopPropagation();
-                                setAnswerModalId(data.questionId)
-                            }}
+                            onClick={() => setAnswerModalId(data.questionId)}
                         />
                     </div>
 
@@ -58,6 +51,6 @@ export default function Answer({ data }: { data: QuestionData }) {
             </div>
             {imgModalData && <ImgModal imgData={imgModalData} setModal={setimgModalData} />}
             {answerModalId && <AnswerModal id={answerModalId} setModal={setAnswerModalId} />}
-        </>
+        </div>
     )
 }

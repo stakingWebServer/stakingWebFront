@@ -1,13 +1,5 @@
 {
   "node": {
-    "3d64164d10de8cfad3f0b3b35a9066617c8a3927": {
-      "workers": {
-        "app/inquiryAnswer/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjaeeun%2FDocuments%2FGitHub%2FstakingWebFront%2Fsrc%2Fapi%2FinquiryAnswer.ts%22%2C%5B%22answerReply%22%2C%22default%22%5D%5D%5D&__client_imported__=true!"
-      },
-      "layer": {
-        "app/inquiryAnswer/page": "action-browser"
-      }
-    },
     "109f065e0e9d0eae4fede828c14dfe3575262c57": {
       "workers": {
         "app/inquiryAnswer/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjaeeun%2FDocuments%2FGitHub%2FstakingWebFront%2Fsrc%2Fapi%2FinquiryAnswer.ts%22%2C%5B%22answerReply%22%2C%22default%22%5D%5D%5D&__client_imported__=true!"
@@ -16,31 +8,15 @@
         "app/inquiryAnswer/page": "action-browser"
       }
     },
-    "2ce27fe475708392698f6bbed0dfa88625beb219": {
+    "3d64164d10de8cfad3f0b3b35a9066617c8a3927": {
       "workers": {
-        "app/dashboard/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjaeeun%2FDocuments%2FGitHub%2FstakingWebFront%2Fsrc%2Fapi%2Fdashboard.ts%22%2C%5B%22default%22%2C%22getPageView%22%5D%5D%5D&__client_imported__=true!"
+        "app/inquiryAnswer/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjaeeun%2FDocuments%2FGitHub%2FstakingWebFront%2Fsrc%2Fapi%2FinquiryAnswer.ts%22%2C%5B%22answerReply%22%2C%22default%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
-        "app/dashboard/page": "action-browser"
-      }
-    },
-    "7f7fcff26f60fe2010d1a20a28825ae0bd6c2d4a": {
-      "workers": {
-        "app/dashboard/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjaeeun%2FDocuments%2FGitHub%2FstakingWebFront%2Fsrc%2Fapi%2Fdashboard.ts%22%2C%5B%22default%22%2C%22getPageView%22%5D%5D%5D&__client_imported__=true!"
-      },
-      "layer": {
-        "app/dashboard/page": "action-browser"
-      }
-    },
-    "12e3e6e07dd30d2aef32d82cb63c163629f33e1c": {
-      "workers": {
-        "app/pushSend/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fjaeeun%2FDocuments%2FGitHub%2FstakingWebFront%2Fsrc%2Fapi%2Fpush.ts%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=true!"
-      },
-      "layer": {
-        "app/pushSend/page": "action-browser"
+        "app/inquiryAnswer/page": "action-browser"
       }
     }
   },
   "edge": {},
-  "encryptionKey": "bF9nvOV3+0us7HUOUFIxb8quF90+CQfYCYQIBcnP8ro="
+  "encryptionKey": "AP7H/62zbbgOGqyzYzdW53VUwYRcvIDSmLm77/DOKHM="
 }

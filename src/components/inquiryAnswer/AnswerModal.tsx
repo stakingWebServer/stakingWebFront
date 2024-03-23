@@ -35,11 +35,15 @@ export default function AnswerModal({ id, setModal }: Props) {
                     <span>답변등록</span>
                     <span className="cursor-point" onClick={() => setModal(null)}>X</span>
                 </div>
-                <TextareaBox text="" id="content" value={answerData} onChange={(e: { target: { value: SetStateAction<string>; }; }) => setAnswerData(e.target.value)} />
+                <TextareaBox text="" id="content"
+                    value={answerData}
+                    onChange={(e: {
+                        target: { value: SetStateAction<string>; };
+                    }) => setAnswerData(e.target.value)}
+                />
                 <div className="text-center">
                     <Button text="답변등록" size={400} onClick={handleAnswer} />
                 </div>
-
             </div>
         </div>
     )
