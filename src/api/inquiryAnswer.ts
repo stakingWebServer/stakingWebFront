@@ -27,7 +27,6 @@ type AnswerData = {
 
 //문의목록 조회
 export async function answerReply(answerData: AnswerData) {
-    console.log(answerData)
     const response = await fetch(`${API_URL}/reply`, {
         method: 'POST',
         mode: 'cors',
