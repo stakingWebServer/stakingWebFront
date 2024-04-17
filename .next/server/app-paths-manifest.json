@@ -1,4 +1,4 @@
 {
-  "/pushSend/page": "app/pushSend/page.js",
-  "/dashboard/page": "app/dashboard/page.js"
+  "/dashboard/page": "app/dashboard/page.js",
+  "/pushSend/page": "app/pushSend/page.js"
 }
