@@ -14,14 +14,10 @@ export type Type = "day" | "month";
 export default function PageChart({ type }: { type: Type }) {
   const [data, setData] = useState<ChartData[]>([]);
 
-  console.log("type", type);
-
   const getChartData = async () => {
     const result = await getPageView(type);
     setData(result.result);
   };
-
-  console.log(data);
 
   useEffect(() => {
     getChartData();
