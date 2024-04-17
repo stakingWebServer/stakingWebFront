@@ -1,30 +1,45 @@
-'use server'
+"use server";
 
-import { API_URL } from "@/utile/env"
-import { cookies } from 'next/headers'
+import { API_URL } from "@/utile/env";
+import { cookies } from "next/headers";
 
-const theme = cookies().get('token');
-const cookie = `Bearer ${theme?.value}` || ""
+const theme = cookies().get("token");
+const cookie = `Bearer ${theme?.value}` || "";
 
 type PushSendData = {
-    title: string;
-    content: string;
-    advertisementPushYn: string;
-    alarmDetailKind: string;
-}
+  title: string;
+  content: string;
+  advertisementPushYn: string;
+  alarmDetailKind: string;
+};
 
 //단체 push 전송
 export default async function pushSend(pushSendData: PushSendData) {
-    const response = await fetch(`${API_URL}/pushs`, {
-        method: 'POST',
-        mode: 'cors',
-        cache: 'no-cache',
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": cookie
-        },
-        body: JSON.stringify(pushSendData)
-    })
+  const response = await fetch(`${API_URL}/pushs`, {
+    method: "POST",
+    mode: "cors",
+    cache: "no-cache",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: cookie,
+    },
+    body: JSON.stringify(pushSendData),
+  });
 
-    return response.json()
+  return response.json();
+}
+
+//푸시 전송 내역 리스트
+export async function getPushList() {
+  const response = await fetch(`${API_URL}/pushs`, {
+    method: "GET",
+    mode: "cors",
+    cache: "no-cache",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: cookie,
+    },
+  });
+
+  return response.json();
 }

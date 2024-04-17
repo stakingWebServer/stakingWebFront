@@ -9,17 +9,19 @@ interface ChartData {
   pageView: number;
 }
 
-type Props = {
-  title: "일간" | "월간";
-};
+export type Type = "day" | "month";
 
-export default function PageChart({ title }: Props) {
+export default function PageChart({ type }: { type: Type }) {
   const [data, setData] = useState<ChartData[]>([]);
 
+  console.log("type", type);
+
   const getChartData = async () => {
-    const result = await getPageView();
+    const result = await getPageView(type);
     setData(result.result);
   };
+
+  console.log(data);
 
   useEffect(() => {
     getChartData();
@@ -27,7 +29,7 @@ export default function PageChart({ title }: Props) {
 
   return (
     <div>
-      <p>페이지별 조회 수({title}) </p>
+      <p>페이지별 조회 수({type === "day" ? "일간" : "월간"}) </p>
       <div>
         <BarChart
           width={500}

@@ -4,8 +4,8 @@ import PageChart from "./PageChart";
 export default function PageView() {
   return (
     <div className="flex justify-center mt-10 w-[740px] mx-auto">
-      <PageChart title={"일간"} />
-      <PageChart title={"월간"} />
+      <PageChart type="day" />
+      <PageChart type="month" />
     </div>
   );
 }
