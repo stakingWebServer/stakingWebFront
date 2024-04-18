@@ -7,8 +7,10 @@ export default function PushSend() {
   return (
     <div>
       <Nav selectNav={"푸시전송"} />
-      <PushList />
-      <PushSendBox />
+      <div className="flex justify-between h-[700px]">
+        <PushList />
+        <PushSendBox />
+      </div>
     </div>
   );
 }

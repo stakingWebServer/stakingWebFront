@@ -45,7 +45,7 @@ export default function PushSendBox() {
   };
 
   return (
-    <div className="w-[500px] mx-auto p-5 rounded-lg text-center bg-blue-100">
+    <div className="w-[45%] p-5 rounded-lg text-center  bg-slate-100 ">
       <InputBox
         text="제목"
         id="title"

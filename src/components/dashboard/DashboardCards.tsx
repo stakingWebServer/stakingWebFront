@@ -17,7 +17,7 @@ const cardArr = [
 
 export default function DashboardCards() {
   return (
-    <div className="flex justify-center text-center h-[230px]">
+    <div className="flex justify-center text-center h-[200px]">
       {cardArr.map((card) => (
         <DashboardCard key={card.name} card={card} />
       ))}

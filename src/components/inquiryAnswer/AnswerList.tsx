@@ -3,6 +3,7 @@
 import getQuestionsList from "@/api/inquiryAnswer";
 import { useEffect, useState } from "react";
 import Answer from "./Answer";
+import { LIST_ODD_STYLE, LIST_STYLE, LIST_TITLE_STYLE } from "../ui/ListStyled";
 
 export type File = {
   fileName: string;
@@ -40,15 +41,15 @@ export default function AnswerList() {
 
   return (
     <div>
-      <p className="bg-gray-200 p-6">Question List</p>
+      <p className={LIST_TITLE_STYLE}>Question List</p>
       <ul>
         {data.map((item, i) => (
           <li
             onClick={() => questionClick(i)}
             key={item.questionId}
             className={`${
-              i % 2 === 0 ? "bg-blue-300" : "bg-blue-100"
-            } cursor-pointer flex flex-wrap my-1`}>
+              i % 2 !== 0 && LIST_ODD_STYLE
+            }  ${LIST_STYLE} cursor-pointer`}>
             <div className="w-full flex justify-between p-6">
               <p>{item.title}</p>
               <p
