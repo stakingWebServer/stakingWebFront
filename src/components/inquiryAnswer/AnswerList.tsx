@@ -52,10 +52,7 @@ export default function AnswerList() {
             }  ${LIST_STYLE} cursor-pointer`}>
             <div className="w-full flex justify-between p-6">
               <p>{item.title}</p>
-              <p
-                className={
-                  item.replyYn === "true" ? "text-blue-600" : "text-red-600"
-                }>
+              <p className={`${item.replyYn === "N" && "text-red-600"}`}>
                 {item.replyYn === "N" ? "미답변" : "답변완료"}
               </p>
             </div>
