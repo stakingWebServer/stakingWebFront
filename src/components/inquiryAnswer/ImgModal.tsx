@@ -15,7 +15,7 @@ type Props = {
 export default function ImgModal({ imgData, setModal }: Props) {
   return (
     <div className={ModalBackCss}>
-      <div className="bg-white w-[400px] p-3 m-auto mt-[12%]">
+      <div className="bg-white w-[400px] p-3 m-auto mt-[5%]">
         <div className="flex justify-between pb-3">
           <span>이미지</span>
           <span className="cursor-pointer" onClick={() => setModal(null)}>

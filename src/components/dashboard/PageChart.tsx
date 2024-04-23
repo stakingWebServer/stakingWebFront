@@ -9,14 +9,28 @@ interface ChartData {
   pageView: number;
 }
 
+export interface PageView {
+  viewName: string;
+  pageViewDate: string;
+  pageView: number;
+}
+
 export type Type = "day" | "month";
 
 export default function PageChart({ type }: { type: Type }) {
   const [data, setData] = useState<ChartData[]>([]);
 
+  //차트 데이터
   const getChartData = async () => {
     const result = await getPageView(type);
-    setData(result.result);
+    let today = new Date().toISOString().split("T")[0];
+    if (type === "month") today = today.slice(0, 7); //month는 월까지만 비교
+
+    const now = result.result.filter((item: PageView) => {
+      return today === item.pageViewDate;
+    });
+
+    setData(now);
   };
 
   useEffect(() => {
