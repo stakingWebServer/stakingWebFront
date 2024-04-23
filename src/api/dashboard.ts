@@ -8,6 +8,7 @@ const theme = cookies().get("token");
 const cookie = `Bearer ${theme?.value}` || "";
 
 interface IPageView {
+  filter(arg0: (item: PageView) => string): any;
   errorCode: null;
   errorMessage: null;
   message: string;

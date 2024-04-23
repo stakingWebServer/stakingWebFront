@@ -1,7 +1,3 @@
-"use client";
-
-import { getPushList } from "@/api/push";
-import { useEffect, useState } from "react";
 import { LIST_ODD_STYLE, LIST_STYLE, LIST_TITLE_STYLE } from "../ui/ListStyled";
 
 interface pushList {
@@ -10,23 +6,16 @@ interface pushList {
   createDatetime: string;
 }
 
-export default function PushList() {
-  const [list, setList] = useState([]);
+interface Props {
+  pushList: pushList[];
+}
 
-  const handleGetPushList = async () => {
-    const result = await getPushList();
-    setList(result.result);
-  };
-
-  useEffect(() => {
-    handleGetPushList();
-  }, []);
-
+export default function PushList({ pushList }: Props) {
   return (
     <div className="w-[52%] h-[100%] overflow-auto">
       <p className={LIST_TITLE_STYLE}>History</p>
       <ul>
-        {list?.map((item: pushList, i) => (
+        {pushList?.map((item: pushList, i) => (
           <li
             key={item.pushTitle}
             className={`${

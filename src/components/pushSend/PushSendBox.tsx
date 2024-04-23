@@ -6,7 +6,11 @@ import Button from "../ui/Button";
 import InputBox from "../ui/InputBox";
 import TextareaBox from "../ui/TextareaBox";
 
-export default function PushSendBox() {
+interface Props {
+  handleGetPushList: () => Promise<void>;
+}
+
+export default function PushSendBox({ handleGetPushList }: Props) {
   const [sendData, setSendData] = useState({
     title: "",
     content: "",
@@ -39,6 +43,7 @@ export default function PushSendBox() {
         title: "",
         content: "",
       });
+      handleGetPushList();
     } else {
       alert("전송에 실패했습니다.");
     }
