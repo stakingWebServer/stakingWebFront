@@ -5,19 +5,20 @@ import { useEffect, useState } from "react";
 import Answer from "./Answer";
 import { LIST_ODD_STYLE, LIST_STYLE, LIST_TITLE_STYLE } from "../ui/ListStyled";
 
-export type File = {
+export interface File {
   fileName: string;
   fileUrl: string;
-};
+}
 
-export type QuestionData = {
+export interface QuestionData {
   questionId: string;
   title: string;
   content: string;
   fileInfos: File[];
   replyYn: string;
   replyContent: string;
-};
+  questionCreatedDate: string;
+}
 
 export default function AnswerList() {
   const [data, setData] = useState<QuestionData[]>([]);
@@ -51,7 +52,12 @@ export default function AnswerList() {
               i % 2 !== 0 && LIST_ODD_STYLE
             }  ${LIST_STYLE} cursor-pointer`}>
             <div className="w-full flex justify-between p-6">
-              <p>{item.title}</p>
+              <p className="flex items-end ">
+                <span>{item.title}</span>
+                <span className="text-xs text-gray-400 mx-1">
+                  {item.questionCreatedDate}
+                </span>
+              </p>
               <p className={`${item.replyYn === "N" && "text-red-600"}`}>
                 {item.replyYn === "N" ? "미답변" : "답변완료"}
               </p>
