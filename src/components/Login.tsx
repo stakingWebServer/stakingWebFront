@@ -29,7 +29,7 @@ export default function Login() {
     if (loginData.loginId === "" || loginData.password === "") {
       alert("빈칸을 입력해 주세요");
       return false;
-    }//test
+    }//test22
     return true;
   };
 
