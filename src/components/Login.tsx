@@ -24,7 +24,7 @@ export default function Login() {
       [name]: value,
     }));
   };
-
+//ㅅㄷㄴㅅ
   //빈 데이터 있는지 확인
   const inputCheck = () => {
     if (loginData.loginId === "" || loginData.password === "") {
